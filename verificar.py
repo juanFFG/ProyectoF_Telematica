@@ -34,7 +34,7 @@ def do_login():
         if acceso:
             return redirect(url_for('fig'))
         else:
-            return jsonify({'success': False})
+            return render_template('acceso_denegado.html')
     return render_template('login.html')
 
 
@@ -62,7 +62,7 @@ def fig():
                  return render_template('front.html', graphJSON=graphJSON)
 
         else:
-                return render_template('login.html')
+                return render_template('acceso_denegado.html')
 
 if __name__ == '__main__':
   app.run(host='0.0.0.0',port=8000)
