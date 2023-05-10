@@ -1,0 +1,9 @@
+FROM python
+WORKDIR /home/app/
+COPY verificar.py .
+COPY templates/ /home/app/templates/
+RUN pip3 install flask
+RUN pip3 install pandas
+RUN pip3 install plotly
+EXPOSE 80
+CMD python3 /home/app/verificar.py
