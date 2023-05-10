@@ -1,0 +1,8 @@
+FROM python
+RUN pip3 install flask
+RUN pip3 install pandas
+WORKDIR /home/app/
+COPY database.py .
+COPY database.db .
+EXPOSE 8080
+CMD python3 /home/app/database.py
